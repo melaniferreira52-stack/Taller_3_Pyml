@@ -1,0 +1,20 @@
+# ===== Análisis y manipulación de datos =====
+numpy>=1.26
+pandas>=2.2
+
+# ===== Carga de datos =====
+openpyxl>=3.1            # leer archivos Excel (.xlsx)
+requests>=2.32           # consumir APIs
+lxml>=5.2                # parsear HTML (pd.read_html en web scraping)
+
+# ===== Machine Learning =====
+scikit-learn>=1.5        # LabelEncoder, scalers, RandomForest
+imbalanced-learn>=0.12   # SMOTE (tarea 4 del notebook CSV)
+joblib>=1.4              # guardar y cargar el modelo (.pkl)
+
+# ===== Aplicación web (Streamlit) =====
+streamlit>=1.40
+plotly>=5.24
+
+# ===== Jupyter (para ejecutar los notebooks) =====
+jupyter>=1.0
