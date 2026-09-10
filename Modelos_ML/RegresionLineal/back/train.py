@@ -1,6 +1,7 @@
 import joblib 
+from pathlib import Path
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
 #predecir precios de viviendas según la superficie en M2
@@ -14,26 +15,29 @@ model = LinearRegression()
 model.fit(x, y)
 
 #predicciones de prueba
-y_pred = model.predict(x)
+# y_pred = model.predict(x)
 
-#imprimir la informacion del modelo entrenado
-print("Coeficiente de regresión:", model.coef_[0])
-print("Término independiente:", model.intercept_)
+# #imprimir la informacion del modelo entrenado
+# print("Coeficiente de regresión:", model.coef_[0])
+# print("Término independiente:", model.intercept_)
 
-#graficar datos reales
-plt.scatter(x, y, color='red', label='Datos de entrenamiento')
+# #graficar datos reales
+# plt.scatter(x, y, color='red', label='Datos de entrenamiento')
 
-#graficar los datos de entrenamiento y la linea de regresion
-plt.plot(x, y_pred, color='blue', label='Línea de regresión')
+# #graficar los datos de entrenamiento y la linea de regresion
+# plt.plot(x, y_pred, color='blue', label='Línea de regresión')
 
-plt.xlabel('Superficie (m2)')
-plt.ylabel('Precio (COP)')
-plt.title('Regresión Lineal: Precio de Viviendas según Superficie')
-plt.legend()
-plt.grid(True)
+# plt.xlabel('Superficie (m2)')
+# plt.ylabel('Precio (COP)')
+# plt.title('Regresión Lineal: Precio de Viviendas según Superficie')
+# plt.legend()
+# plt.grid(True)
 
-#Imprimir la grafica
-plt.show()
+# #Imprimir la grafica
+# plt.show()
+
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "models/linear_model.joblib"
 
 #guardar el modelo entrenando en un archivo
-joblib.dump(model, 'Modelos_ML/RegresionLineal/models/linear_model.joblib')
+joblib.dump(model, MODEL_PATH)
