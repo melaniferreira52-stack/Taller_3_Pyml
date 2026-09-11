@@ -1,0 +1,33 @@
+{% load static humanize %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasador de Viviendas</title>
+    <link rel="stylesheet" href="{% static 'app_predicc/css/style.css' %}">
+</head>
+<body>
+    <main class="card">
+        <h1>🏠 Tasador de Viviendas</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="area_m2">Área de la vivienda (m²)</label>
+            <input type="number" step="0.1" min="0" id="area_m2" name="area_m2"
+                   placeholder="Ej: 85.5" value="{{ area_ingresada|default:'' }}" required>
+            <button type="submit">Calcular Precio</button>
+        </form>
+
+        {% if error %}
+            <div class="alert-error">⚠ {{ error }}</div>
+        {% endif %}
+
+        {% if exito %}
+            <div class="alert-success">
+                ✅ Una vivienda de {{ area_m2|floatformat:0 }} m² tiene un
+                valor estimado de <strong>${{ precio_estimado|floatformat:0|intcomma }} COP</strong>
+            </div>
+        {% endif %}
+    </main>
+</body>
+</html>

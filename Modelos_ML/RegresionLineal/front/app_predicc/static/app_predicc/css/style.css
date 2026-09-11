@@ -1,0 +1,6 @@
+body { font-family: sans-serif; background: #eef1f8; display: flex; justify-content: center; padding-top: 60px; }
+.card { background: #f3f4fb; padding: 32px; border-radius: 16px; width: 360px; text-align: center; }
+input, button { width: 100%; padding: 12px; margin-top: 8px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; }
+button { background: #2151f5; color: white; border: none; margin-top: 16px; cursor: pointer; }
+.alert-success { background: #dce9f2; padding: 12px; border-radius: 8px; margin-top: 16px; }
+.alert-error { background: #fbe2e2; padding: 12px; border-radius: 8px; margin-top: 16px; }
