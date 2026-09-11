@@ -29,9 +29,9 @@ def tasador(request):
 
         except ValueError:
             contexto['error'] = 'Ingresa un número válido (ej: 85.5).'
-        except requests.exceptions.ConnectionError:
-            contexto['error'] = 'No fue posible conectar con la API.'
-        except requests.exceptions.RequestException:
-            contexto['error'] = 'Ocurrió un error al calcular el precio.'
+        except requests.exceptions.ConnectionError as e:
+            contexto["error"] = f"No fue posible conectar: {e}"
+        except requests.exceptions.RequestException as e:
+            contexto['error'] = f'Ocurrió un error al calcular el precio: {e}'
 
     return render(request, 'app_predicc/index.html', contexto)
