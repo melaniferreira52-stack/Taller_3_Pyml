@@ -1,0 +1,22 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Django
+db.sqlite3
+staticfiles/
+
+# Archivos temporales de editores
+tempCodeRunnerFile.py
+.vscode/
+.idea/
+
+# Otros
+*.log
+.DS_Store
