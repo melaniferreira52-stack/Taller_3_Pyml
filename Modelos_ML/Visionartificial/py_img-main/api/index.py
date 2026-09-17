@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder="../public")
 # Cargar el clasificador de rostros (Haar Cascade)
 # Asegúrate de tener el archivo .xml en la raíz de tu proyecto
 CASCADE_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "haarcascade_frontalface_default.xml"
+    os.path.dirname(__file__), "haarcascade_frontalface_default.xml"
 )
 face_classifier = cv2.CascadeClassifier(CASCADE_PATH)
 
